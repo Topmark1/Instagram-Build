@@ -19,6 +19,8 @@ import { modalState } from "../atoms/modalAtoms";
 
 function Header(){
 const {data:session} = useSession();
+console.log('session')
+console.log(session)
 const router = useRouter();
 const [open,setOpen] = useRecoilState(modalState)
 

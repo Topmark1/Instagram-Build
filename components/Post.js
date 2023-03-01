@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import {
     BookmarkIcon,
     ChatBubbleLeftIcon,
@@ -11,8 +11,13 @@ import {
 import {
     HeartIcon as HeartIconFilled
 } from '@heroicons/react/24/solid'
+import { useSession } from 'next-auth/react'
 
 function Post({id,username,userImg,img,caption}) {
+  const {data:session } = useSession()
+const [comments,setComments] = useState([])
+const [comment,setComment] = useState([])
+
   return (
     <div className='bg-white my-7 border rounded-sm'>
         {/*Header */}
@@ -26,6 +31,7 @@ function Post({id,username,userImg,img,caption}) {
         <img src ={img} className='onbject-cover w-full' alt='' />
 
         {/*buttons */}
+        {session && (
         <div className='flex justify-between px-4 pt-4'> 
         <div className='flex space-x-4'> 
           <HeartIcon className='btn'/>
@@ -34,7 +40,8 @@ function Post({id,username,userImg,img,caption}) {
         </div>
         <BookmarkIcon className='btn'/>
         </div>
-        
+           )}
+
         {/*Captions */}
         <div> 
           <p className='p-5 truncate'>
@@ -45,13 +52,17 @@ function Post({id,username,userImg,img,caption}) {
         {/*coments */}
 
          {/*input*/}
+         {session && (
          <form>
           <FaceSmileIcon className='h-7' />
-          <input type="text" className='border-none flex-1 focus:ring-0 outline-none' 
+          <input 
+          value={comment}
+          onChange={e=>setComment(e.target.value)}
+          type="text" className='border-none flex-1 focus:ring-0 outline-none' 
           placeholder='Add a comment..'/>
-          <button className='font-semibold text-blue-400'>Post</button>
+          <button type="submit" className='font-semibold text-blue-400'>Post</button>
          </form>
-        
+         )}  
     </div>
   )
 }
