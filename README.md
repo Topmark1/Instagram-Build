@@ -1,6 +1,6 @@
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
-## Getting Started
+## Built with Tailwind CSS for styling, Recoil for State Management, Faker js to update stories and Firebase to save and update data
 
 First, run the development server:
 
