@@ -30,13 +30,11 @@ const [open,setOpen] = useRecoilState(modalState)
 
             {/*Left */}
             <div onClick={()=>router.push('/')} className="relative hidden lg:inline-grid w-24 cursor-pointer">
-            <Image src="https:links.papareact.com/ocw"
-            alt='' layout="fill" objectFit='contain'/>
+            <img className="mt-4" src="https://links.papareact.com/ocw" alt="" />
             </div>
             <div onClick={()=>router.push('/')} className="relative w-10 lg:hidden flex-shrink-0 cursor-pointer">
-            <Image src="https:links.papareact.com/jjm"
-            alt=''
-            layout="fill" objectFit='contain'/>
+            <img className="mt-4" src="https:links.papareact.com/jjm"
+            alt='' />
             </div>
 
             {/*Middle */}
