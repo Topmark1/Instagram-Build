@@ -9,7 +9,7 @@ export const authOptions = {
       clientSecret: process.env.GOOGLE_CLIENT_SECRET,
     }),    // ...add more providers here
   ],
- secret:process.env.NEXTAUTH_SECRET,
+ secret:"USOQOVsPhnlq6NiHrGNQg90AKturXzakNONhDk9GL4w=",//process.env.NEXTAUTH_SECRET,
  pages:{
   signIn:"/auth/signin",
  },
